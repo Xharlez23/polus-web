@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+/* ═══════════════════════════════════════════════════════════════
+   POLUS · styles.scss  (global)
+   Agrega esto en tu archivo src/styles.scss
+═══════════════════════════════════════════════════════════════ */
+
+/* ── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+/* ── Reset básico ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Variables globales ───────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --color-bg-deep:      #030712;
+  --color-bg-dark:      #07101e;
+  --color-bg-darker:    #040d1b;
+
+  /* Brand */
+  --color-blue:         #3B82F6;
+  --color-blue-dark:    #2563EB;
+  --color-blue-deep:    #1E3A8A;
+  --color-blue-glow:    #1565FF;
+
+  /* Texto */
+  --color-text:         #ffffff;
+  --color-text-muted:   #A5B4C7;
+  --color-text-dim:     #B8C5D6;
+  --color-text-faint:   #6B7D8E;
+
+  /* Borders */
+  --color-border:       rgba(255, 255, 255, .08);
+  --color-border-hover: rgba(255, 255, 255, .15);
+  --color-border-blue:  rgba(37, 99, 235, .4);
+
+  /* Tipografía */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --section-padding: 120px;
+
+  /* Radii */
+  --radius-sm:    12px;
+  --radius-md:    16px;
+  --radius-lg:    20px;
+  --radius-btn:   14px;
+  --radius-pill:  40px;
+
+  /* Transitions */
+  --transition: .35s ease;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+}
+
+/* ── Scroll offset para anclas con navbar fijo ────────────── */
+section[id] {
+  scroll-margin-top: 80px; /* ajusta al alto de tu navbar */
+}
+
+/* ── Utilitarios globales ─────────────────────────────────── */
+.container {
+  width: min(1300px, 90%);
+  margin: auto;
+}

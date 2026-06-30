@@ -1,0 +1,89 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+
+    <div class="container navbar-content">
+
+        <a routerLink="/" class="logo">
+            <img src="assets/images/logos/istotipo-Photoroom.png" alt="POLUS">
+        </a>
+
+        <!-- Menú desktop -->
+        <ul class="menu">
+            @for(item of menu; track item.title) {
+                <li>
+                    <a
+                        [routerLink]="item.route"
+                        [fragment]="item.fragment ?? undefined"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: item.exact ?? false }">
+                        {{ item.title }}
+                    </a>
+                </li>
+            }
+        </ul>
+
+        <button class="btn-primary" (click)="scrollToContact()">
+            Solicitar Cotización
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- Bottom Tab Bar · solo mobile -->
+<nav class="bottom-nav" aria-label="Navegación principal">
+
+    @for(item of menu; track item.title) {
+        <a
+            class="tab-item"
+            [routerLink]="item.route"
+            [fragment]="item.fragment ?? undefined"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: item.exact ?? false }">
+
+            <span class="tab-icon">
+
+                @if(item.icon === 'home') {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+                        <path d="M9 21V12h6v9"/>
+                    </svg>
+                }
+
+                @if(item.icon === 'services') {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                }
+
+                @if(item.icon === 'projects') {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M2 6a2 2 0 0 1 2-2h5l2 2h9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z"/>
+                    </svg>
+                }
+
+                @if(item.icon === 'about') {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="9" cy="7" r="3"/>
+                        <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        <path d="M21 21v-2a4 4 0 0 0-3-3.85"/>
+                    </svg>
+                }
+
+                @if(item.icon === 'contact') {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                }
+
+            </span>
+
+            <span class="tab-label">{{ item.title }}</span>
+
+        </a>
+    }
+
+</nav>

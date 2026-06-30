@@ -1,0 +1,275 @@
+<!-- Hero Section -->
+<section class="hero" id="inicio">
+
+  <div class="background"></div>
+
+  <div class="container">
+
+    <div class="left">
+
+      <span class="badge">TECNOLOGÍA PARA PERSONAS Y EMPRESAS</span>
+
+      <h1>Transformamos tus ideas en soluciones digitales.</h1>
+
+      <p>
+        En POLUS desarrollamos software, páginas web,
+        aplicaciones móviles, infraestructura tecnológica,
+        soporte técnico y consultoría.
+      </p>
+
+      <div class="buttons">
+        <button class="primary">Solicitar Cotización</button>
+        <button class="secondary">Ver Servicios</button>
+      </div>
+
+      <!-- Dashboard de métricas flotante -->
+      <div class="hero-dashboard">
+        <div class="dashboard">
+
+          <div class="top-bar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="dashboard-title">POLUS · Dashboard</span>
+          </div>
+
+          <div class="dashboard-content">
+
+            <div class="card card-large">
+              <h4>Clientes activos</h4>
+              <h2>+150</h2>
+              <span class="card-badge positive">↑ 12% este mes</span>
+            </div>
+
+            <div class="card">
+              <h4>Proyectos</h4>
+              <h2>98</h2>
+            </div>
+
+            <div class="card">
+              <h4>Uptime</h4>
+              <h2>99.9%</h2>
+            </div>
+
+            <div class="card card-full">
+              <h4>Infraestructura Cloud</h4>
+              <div class="progress">
+                <div class="progress-bar"></div>
+              </div>
+              <span class="progress-label">87% optimizado</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right">
+      <div class="circle"></div>
+      <img src="assets/images/logos/istotipo-Photoroom.png" alt="POLUS">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Stats Section -->
+<section class="stats" id="stats">
+  <div class="container">
+    <div class="stat-card">
+      <h2>98+</h2>
+      <span>Proyectos realizados</span>
+    </div>
+    <div class="stat-card">
+      <h2>150+</h2>
+      <span>Clientes satisfechos</span>
+    </div>
+    <div class="stat-card">
+      <h2>24/7</h2>
+      <span>Soporte Técnico</span>
+    </div>
+    <div class="stat-card">
+      <h2>5+</h2>
+      <span>Años de experiencia</span>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="servicios" data-aos="fade-up">
+  <div class="container">
+    <span class="section-tag">NUESTROS SERVICIOS</span>
+    <h2>Soluciones tecnológicas para impulsar tu empresa</h2>
+    <p class="section-description">
+      Desarrollamos soluciones modernas para personas, empresas y organizaciones.
+    </p>
+    <div class="services-grid">
+      @for(service of services; track service.title) {
+      <app-service-card [service]="service"></app-service-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="nosotros" data-aos="fade-up">
+  <div class="container">
+    <span class="section-tag">¿POR QUÉ POLUS?</span>
+    <h2>Más que tecnología, construimos confianza.</h2>
+    <div class="features-grid">
+      @for(feature of features; track feature.title) {
+      <app-feature-card [feature]="feature"></app-feature-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="process" id="proceso" data-aos="fade-up">
+  <div class="container">
+    <span class="section-tag">NUESTRO PROCESO</span>
+    <h2>Así convertimos una idea en un proyecto exitoso.</h2>
+    <p class="section-description">
+      Trabajamos con una metodología clara para garantizar
+      calidad, transparencia y resultados.
+    </p>
+    <div class="process-grid">
+      @for(step of process; track step.number) {
+      <app-process-card [process]="step"></app-process-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Technologies Section -->
+<section class="technologies" id="tecnologias" data-aos="fade-up">
+  <div class="container">
+    <span class="section-tag">TECNOLOGÍAS</span>
+    <h2>Herramientas modernas para construir soluciones de calidad.</h2>
+    <p class="section-description">
+      Trabajamos con tecnologías ampliamente utilizadas en la industria
+      para garantizar rendimiento, escalabilidad y seguridad.
+    </p>
+    <div class="technologies-grid">
+      @for(item of technologies; track item.name) {
+      <app-technology-card [technology]="item"></app-technology-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="portfolio" id="portafolio" data-aos="fade-up">
+  <div class="container">
+    <span class="section-tag">PORTAFOLIO</span>
+    <h2>Algunos proyectos desarrollados por POLUS</h2>
+    <p class="section-description">
+      Estas son algunas de las soluciones tecnológicas que hemos desarrollado.
+    </p>
+    <div class="portfolio-grid">
+      @for(project of projects; track project.title) {
+      <app-project-card [project]="project"></app-project-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ✨ NUEVA: Testimonials Section -->
+<section class="testimonials" id="testimonios" data-aos="fade-up">
+  <div class="container">
+    <span class="section-tag">TESTIMONIOS</span>
+    <h2>Lo que dicen nuestros clientes.</h2>
+    <p class="section-description">
+      La confianza de nuestros clientes es el mejor respaldo de nuestro trabajo.
+    </p>
+    <div class="testimonials-grid">
+      @for(testimonial of testimonials; track testimonial.name) {
+      <app-testimonial-card [testimonial]="testimonial"></app-testimonial-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ✨ NUEVA: Contact Section -->
+<section class="contact" id="contacto" data-aos="fade-up">
+  <div class="container">
+
+    <div class="contact-left">
+      <span class="section-tag">CONTACTO</span>
+      <h2>¿Listo para empezar tu proyecto?</h2>
+      <p class="section-description">
+        Cuéntanos qué necesitas y te respondemos en menos de 24 horas.
+      </p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <!-- reemplaza con tu ícono SVG o Tabler icon -->
+          <span class="contact-icon">📧</span>
+          <span>contacto&#64;polus.com.co</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <span>+57 300 000 0000</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>Colombia · Atención remota a todo el país</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input id="name" type="text" placeholder="Tu nombre" [(ngModel)]="contactData.name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input id="email" type="email" placeholder="tu@correo.com" [(ngModel)]="contactData.email" name="email"
+              required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Servicio de interés</label>
+          <select id="service" [(ngModel)]="contactData.service" name="service">
+            <option value="">Selecciona un servicio</option>
+            <option>Desarrollo de Software</option>
+            <option>Infraestructura</option>
+            <option>Soporte Técnico</option>
+            <option>Cloud Computing</option>
+            <option>Ciberseguridad</option>
+            <option>Aplicaciones Móviles</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" rows="4" placeholder="Cuéntanos sobre tu proyecto..." [(ngModel)]="contactData.message"
+            name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="primary" [disabled]="contactForm.invalid">
+          Enviar mensaje
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+  <div class="container">
+    <h2>¿Tienes una idea?</h2>
+    <p>Nosotros la convertimos en una solución tecnológica.</p>
+    <button class="primary" (click)="scrollToContact()">
+      Solicitar Cotización
+    </button>
+  </div>
+</section>

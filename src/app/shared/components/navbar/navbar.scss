@@ -1,0 +1,210 @@
+/* ═══════════════════════════════════════════════════
+   NAVBAR · POLUS
+═══════════════════════════════════════════════════ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(3, 7, 18, .45);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+    transition: background .4s ease, box-shadow .4s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(7, 16, 30, .95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+}
+
+/* ── Logo ────────────────────────────────────────── */
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+/* ── Menú desktop ────────────────────────────────── */
+
+.menu {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: rgba(255, 255, 255, .75);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color .25s ease;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3B82F6;
+    border-radius: 2px;
+    transition: width .25s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: #fff;
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+    width: 100%;
+}
+
+.menu a.active {
+    color: #3B82F6;
+}
+
+/* ── Botón CTA ───────────────────────────────────── */
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563EB, #3B82F6);
+    color: white;
+    border: none;
+    padding: 13px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    transition: .3s ease;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, .3);
+    white-space: nowrap;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(37, 99, 235, .45);
+}
+
+/* ── Bottom Tab Bar (oculto en desktop) ──────────── */
+
+.bottom-nav {
+    display: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   MOBILE · Bottom Tab Bar
+═══════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+
+    /* Ocultar menú y botón del navbar top */
+    .menu,
+    .btn-primary {
+        display: none;
+    }
+
+    /* Mostrar bottom nav */
+    .bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        background: rgba(4, 13, 27, .92);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid rgba(255, 255, 255, .08);
+        padding: 8px 0 max(8px, env(safe-area-inset-bottom));
+    }
+
+    .tab-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        text-decoration: none;
+        color: rgba(255, 255, 255, .4);
+        padding: 6px 4px;
+        transition: color .2s ease;
+        position: relative;
+    }
+
+    /* Punto activo encima del ícono */
+    .tab-item.active::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 32px;
+        height: 2px;
+        background: #3B82F6;
+        border-radius: 0 0 4px 4px;
+    }
+
+    .tab-item:hover {
+        color: rgba(255, 255, 255, .7);
+    }
+
+    .tab-item.active {
+        color: #3B82F6;
+    }
+
+    .tab-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 32px;
+        border-radius: 10px;
+        transition: background .2s ease;
+    }
+
+    .tab-item.active .tab-icon {
+        background: rgba(59, 130, 246, .15);
+    }
+
+    .tab-label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: .01em;
+    }
+
+    /* El contenido del page necesita padding abajo para no quedar tapado */
+    /* Agrega esto en styles.scss global:
+       body { padding-bottom: 70px; }
+    */
+}
+
+@media (max-width: 600px) {
+    .logo img {
+        width: 50px;
+    }
+}
