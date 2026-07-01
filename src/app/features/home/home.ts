@@ -6,10 +6,8 @@ import { FeatureCard } from '../../shared/components/feature-card/feature-card';
 import { ProcessCard } from '../../shared/components/process-card/process-card';
 import { TechnologyCard } from '../../shared/components/technology-card/technology-card';
 import { ProjectCard } from '../../shared/components/project-card/project-card';
-import { TestimonialCard } from "../../shared/components/testimonial-card/testimonial-card";
 // import { TestimonialCard } from '../../shared/components/testimonial-card/testimonial-card';
 
-// ── Modelos inline (muévelos a sus archivos en models/) ──
 
 export interface Testimonial {
   name: string;
@@ -17,7 +15,6 @@ export interface Testimonial {
   company: string;
   message: string;
   rating: number;
-  avatar?: string; // opcional: iniciales o imagen
 }
 
 export interface ContactData {
@@ -128,7 +125,7 @@ export class Home {
      PROYECTOS
   ────────────────────────────────────────────────── */
   projects = [
-    {
+   /*  {
       title: 'Sistema de Cartera',
       description: 'Sistema para administración de cobradores, clientes y pagos.',
       image: 'images/projects/cartera.jpg',
@@ -139,11 +136,11 @@ export class Home {
       description: 'Plataforma para promocionar sitios turísticos y emprendimientos.',
       image: 'images/projects/turismo.jpg',
       technologies: ['Angular', 'Firebase']
-    },
+    }, */
     {
       title: 'Sistema de Préstamos',
       description: 'Aplicación para registrar créditos, cuotas y cobradores.',
-      image: 'images/projects/prestamos.jpg',
+      image: 'assets/images/logos/Prestamos.jpeg',
       technologies: ['Angular', 'Node', 'MySQL']
     }
   ];
