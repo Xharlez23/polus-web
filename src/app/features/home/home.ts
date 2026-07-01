@@ -37,7 +37,7 @@ export interface ContactData {
     ProcessCard,
     TechnologyCard,
     ProjectCard,
-    TestimonialCard
+    
 ],
   templateUrl: './home.html',
   styleUrl: './home.scss'
@@ -69,11 +69,6 @@ export class Home {
       description: 'Migración a la nube, servidores virtuales y respaldos automáticos.'
     },
     {
-      icon: 'shield-check',
-      title: 'Ciberseguridad',
-      description: 'Protección de equipos, redes y datos empresariales.'
-    },
-    {
       icon: 'smartphone',
       title: 'Aplicaciones Móviles',
       description: 'Apps Android e iOS desarrolladas con tecnologías modernas.'
@@ -82,7 +77,7 @@ export class Home {
 
   /* ──────────────────────────────────────────────────
      FEATURES
-  ────────────────────────────────────────────────── */
+  ─────────────────────────────────────────────────── */
   features = [
     {
       icon: 'zap',
@@ -121,18 +116,12 @@ export class Home {
      TECNOLOGÍAS
   ────────────────────────────────────────────────── */
   technologies = [
-    { name: 'Angular',    image: 'images/technologies/angular.svg' },
-    { name: 'React',      image: 'images/technologies/react.svg' },
-    { name: 'Node.js',    image: 'images/technologies/nodejs.svg' },
-    { name: 'Flutter',    image: 'images/technologies/flutter.svg' },
-    { name: 'MySQL',      image: 'images/technologies/mysql.svg' },
-    { name: 'PostgreSQL', image: 'images/technologies/postgresql.svg' },
-    { name: 'Docker',     image: 'images/technologies/docker.svg' },
-    { name: 'Git',        image: 'images/technologies/git.svg' },
-    { name: 'Linux',      image: 'images/technologies/linux.svg' },
-    { name: 'Firebase',   image: 'images/technologies/firebase.svg' },
-    { name: 'AWS',        image: 'images/technologies/aws.svg' },
-    { name: 'SQL Server', image: 'images/technologies/sqlserver.svg' }
+    { name: 'Angular',    image: 'assets/images/technologies/angular.svg' },
+    { name: 'React',      image: 'assets/images/technologies/react_light.svg' },
+    { name: 'Node.js',    image: 'assets/images/technologies/nodejs.svg' },
+    { name: 'MySQL',      image: 'assets/images/technologies/mysql-icon-light.svg' },
+    { name: 'PostgreSQL', image: 'assets/images/technologies/postgresql.svg' },
+    { name: 'Git',        image: 'assets/images/technologies/git.svg' },
   ];
 
   /* ──────────────────────────────────────────────────
