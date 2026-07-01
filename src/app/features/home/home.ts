@@ -8,7 +8,6 @@ import { TechnologyCard } from '../../shared/components/technology-card/technolo
 import { ProjectCard } from '../../shared/components/project-card/project-card';
 // import { TestimonialCard } from '../../shared/components/testimonial-card/testimonial-card';
 
-
 export interface Testimonial {
   name: string;
   role: string;
@@ -23,7 +22,6 @@ export interface ContactData {
   service: string;
   message: string;
 }
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -34,11 +32,12 @@ export interface ContactData {
     ProcessCard,
     TechnologyCard,
     ProjectCard,
-    
-],
+
+  ],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
+
 export class Home {
 
   /* ──────────────────────────────────────────────────
@@ -102,35 +101,35 @@ export class Home {
      PROCESO
   ────────────────────────────────────────────────── */
   process = [
-    { number: '1', title: 'Análisis',         description: 'Escuchamos tus necesidades y entendemos el problema.' },
-    { number: '2', title: 'Planeación',        description: 'Diseñamos la arquitectura y definimos la mejor solución.' },
-    { number: '3', title: 'Desarrollo',        description: 'Construimos el software utilizando tecnologías modernas.' },
-    { number: '4', title: 'Implementación',    description: 'Realizamos pruebas y ponemos la solución en producción.' },
-    { number: '5', title: 'Soporte',           description: 'Seguimos acompañándote después de la entrega.' }
+    { number: '1', title: 'Análisis', description: 'Escuchamos tus necesidades y entendemos el problema.' },
+    { number: '2', title: 'Planeación', description: 'Diseñamos la arquitectura y definimos la mejor solución.' },
+    { number: '3', title: 'Desarrollo', description: 'Construimos el software utilizando tecnologías modernas.' },
+    { number: '4', title: 'Implementación', description: 'Realizamos pruebas y ponemos la solución en producción.' },
+    { number: '5', title: 'Soporte', description: 'Seguimos acompañándote después de la entrega.' }
   ];
 
   /* ──────────────────────────────────────────────────
      TECNOLOGÍAS
   ────────────────────────────────────────────────── */
   technologies = [
-    { name: 'Angular',    image: 'assets/images/technologies/angular.svg' },
-    { name: 'React',      image: 'assets/images/technologies/react_light.svg' },
-    { name: 'Node.js',    image: 'assets/images/technologies/nodejs.svg' },
-    { name: 'MySQL',      image: 'assets/images/technologies/mysql-icon-light.svg' },
+    { name: 'Angular', image: 'assets/images/technologies/angular.svg' },
+    { name: 'React', image: 'assets/images/technologies/react_light.svg' },
+    { name: 'Node.js', image: 'assets/images/technologies/nodejs.svg' },
+    { name: 'MySQL', image: 'assets/images/technologies/mysql-icon-light.svg' },
     { name: 'PostgreSQL', image: 'assets/images/technologies/postgresql.svg' },
-    { name: 'Git',        image: 'assets/images/technologies/git.svg' },
+    { name: 'Git', image: 'assets/images/technologies/git.svg' },
   ];
 
   /* ──────────────────────────────────────────────────
      PROYECTOS
   ────────────────────────────────────────────────── */
   projects = [
-   /*  {
-      title: 'Sistema de Cartera',
-      description: 'Sistema para administración de cobradores, clientes y pagos.',
-      image: 'images/projects/cartera.jpg',
-      technologies: ['Angular', 'Node.js', 'PostgreSQL']
-    },
+    {
+      title: 'Sistema de Gestion (Audigestión)',
+      description: 'Sistema para la gestión de procesos psicológicos en instituciones educativas, permitiendo administrar estudiantes, seguimientos, valoraciones, citas e informes de manera organizada y segura.',
+      image: 'assets/images/logos/audigestion.png',
+      technologies: ['React', 'MySQL']
+    },/*
     {
       title: 'Portal Turístico',
       description: 'Plataforma para promocionar sitios turísticos y emprendimientos.',
@@ -141,7 +140,7 @@ export class Home {
       title: 'Sistema de Préstamos',
       description: 'Aplicación para registrar créditos, cuotas y cobradores.',
       image: 'assets/images/logos/Prestamos.jpeg',
-      technologies: ['Angular', 'Node', 'MySQL']
+      technologies: ['Angular', 'Nodejs', 'PostgreSQL']
     }
   ];
 
@@ -183,20 +182,56 @@ export class Home {
   };
 
   onSubmit(): void {
-    if (!this.contactData.name || !this.contactData.email || !this.contactData.message) return;
 
-    console.log('Formulario enviado:', this.contactData);
-
-    // TODO: conectar con tu backend, EmailJS, Formspree, etc.
-    // Ejemplo con EmailJS:
-    // emailjs.send('SERVICE_ID', 'TEMPLATE_ID', this.contactData, 'PUBLIC_KEY');
-
-    // Resetear formulario
-    this.contactData = { name: '', email: '', service: '', message: '' };
-    alert('¡Mensaje enviado! Te contactaremos pronto.');
+  if (!this.contactData.name || !this.contactData.email || !this.contactData.message) {
+    return;
   }
+
+  const telefono = '573025650668';
+
+  const mensaje = `
+🚀 *NUEVA SOLICITUD DE SERVICIO - POLUS*
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+👤 *Cliente:*
+${this.contactData.name}
+
+📧 *Correo:*
+${this.contactData.email}
+
+💼 *Servicio de interés:*
+${this.contactData.service || 'No especificado'}
+
+📝 *Descripción del proyecto:*
+${this.contactData.message}
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+Agradezco su atención.
+Quedo atento(a) a su respuesta.
+
+Saludos.
+`;
+
+  const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+
+  window.open(url, '_blank');
+
+  this.contactData = {
+    name: '',
+    email: '',
+    service: '',
+    message: ''
+  };
+
+}
 
   scrollToContact(): void {
     document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
   }
+  scrollToService(): void {
+    document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' });
+  }
+
 }
