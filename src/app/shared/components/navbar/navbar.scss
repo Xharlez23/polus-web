@@ -8,16 +8,16 @@
     left: 0;
     width: 100%;
     z-index: 999;
-    background: rgba(3, 7, 18, .45);
+    background: var(--color-navbar);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(255, 255, 255, .05);
+    border-bottom: 1px solid var(--color-navbar-border);
     transition: background .4s ease, box-shadow .4s ease;
 }
 
 .navbar.scrolled {
-    background: rgba(7, 16, 30, .95);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    background: var(--color-navbar-scroll);
+    box-shadow: var(--shadow-navbar);
 }
 
 .navbar-content {
@@ -52,7 +52,7 @@
 }
 
 .menu a {
-    color: rgba(255, 255, 255, .75);
+    color:var(--color-menu);
     text-decoration: none;
     font-weight: 500;
     font-size: 15px;
@@ -68,14 +68,14 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #3B82F6;
+    background:var(--color-blue);
     border-radius: 2px;
     transition: width .25s ease;
 }
 
 .menu a:hover,
 .menu a.active {
-    color: #fff;
+    color:var(--color-menu-hover);
 }
 
 .menu a:hover::after,
@@ -84,15 +84,15 @@
 }
 
 .menu a.active {
-    color: #3B82F6;
+    color:var(--color-menu-active);
 }
 
 /* ── Botón CTA ───────────────────────────────────── */
 
 .btn-primary {
     background: linear-gradient(135deg, #2563EB, #3B82F6);
-    color: white;
-    border: none;
+    color:var(--color-text);
+    border:1px solid transparent;
     padding: 13px 28px;
     border-radius: 12px;
     cursor: pointer;
@@ -135,10 +135,10 @@
         left: 0;
         right: 0;
         z-index: 999;
-        background: rgba(4, 13, 27, .92);
+        background:var(--color-bottom-nav);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border-top: 1px solid rgba(255, 255, 255, .08);
+        border-top: 1px solid var(--color-bottom-border);
         padding: 8px 0 max(8px, env(safe-area-inset-bottom));
     }
 
@@ -150,7 +150,7 @@
         justify-content: center;
         gap: 4px;
         text-decoration: none;
-        color: rgba(255, 255, 255, .4);
+        color:var(--color-tab);
         padding: 6px 4px;
         transition: color .2s ease;
         position: relative;
@@ -165,16 +165,16 @@
         transform: translateX(-50%);
         width: 32px;
         height: 2px;
-        background: #3B82F6;
+        background:var(--color-blue);
         border-radius: 0 0 4px 4px;
     }
 
     .tab-item:hover {
-        color: rgba(255, 255, 255, .7);
+        color:var(--color-tab-hover);
     }
 
     .tab-item.active {
-        color: #3B82F6;
+        color:var(--color-menu-active);
     }
 
     .tab-icon {
@@ -188,7 +188,7 @@
     }
 
     .tab-item.active .tab-icon {
-        background: rgba(59, 130, 246, .15);
+       background:var(--color-tab-active-bg);
     }
 
     .tab-label {
@@ -207,4 +207,81 @@
     .logo img {
         width: 50px;
     }
+}
+/*═══════════════════════════════
+   THEME TOGGLE
+═══════════════════════════════*/
+
+.theme-toggle{
+
+    width:64px;
+
+    height:36px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:50px;
+
+    background:var(--color-card);
+
+    border:1px solid var(--color-border);
+
+    display:flex;
+
+    align-items:center;
+
+    padding:3px;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.theme-toggle:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.toggle-thumb{
+
+    width:28px;
+
+    height:28px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+
+    color:white;
+
+    transition:.35s;
+
+    font-size:15px;
+
+}
+
+[data-theme="dark"] .toggle-thumb{
+
+    transform:translateX(0);
+
+}
+
+[data-theme="light"] .toggle-thumb{
+
+    transform:translateX(28px);
+
 }

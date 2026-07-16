@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ThemeService } from '../../../core/services/theme.services';
 
 interface MenuItem {
   title: string;
@@ -17,7 +18,13 @@ interface MenuItem {
   styleUrl: './navbar.scss'
 })
 export class Navbar {
+constructor(public theme:ThemeService){}
 
+toggleTheme(){
+
+  this.theme.toggleTheme();
+
+}
   isScrolled = false;
 
   menu: MenuItem[] = [

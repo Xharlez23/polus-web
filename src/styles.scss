@@ -7,59 +7,178 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
 /* ── Reset básico ─────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ── Variables globales ───────────────────────────────────── */
+
+/* ── thema claro ───────────────────────────────────── */
 :root {
+
   /* Backgrounds */
-  --color-bg-deep:      #030712;
-  --color-bg-dark:      #07101e;
-  --color-bg-darker:    #040d1b;
+  --color-bg-deep: #F8FAFC;
+  --color-bg-dark: #FFFFFF;
+  --color-bg-darker: #F1F5F9;
 
   /* Brand */
-  --color-blue:         #3B82F6;
-  --color-blue-dark:    #2563EB;
-  --color-blue-deep:    #1E3A8A;
-  --color-blue-glow:    #1565FF;
+  --color-blue: #3B82F6;
+  --color-blue-dark: #2563EB;
+  --color-blue-deep: #1E3A8A;
+  --color-blue-glow: #1565FF;
+
+  /* Superficies */
+  --color-surface: #F8FAFC;
+  --color-surface-alt: #EEF4FF;
+  --color-card: #FFFFFF;
+  --color-card-hover: #F8FAFC;
 
   /* Texto */
-  --color-text:         #ffffff;
-  --color-text-muted:   #A5B4C7;
-  --color-text-dim:     #B8C5D6;
-  --color-text-faint:   #6B7D8E;
+  --color-heading: #0F172A;
+  --color-text: #334155;
+  --color-text-muted: #64748B;
+  --color-text-light: #94A3B8;
 
-  /* Borders */
-  --color-border:       rgba(255, 255, 255, .08);
-  --color-border-hover: rgba(255, 255, 255, .15);
-  --color-border-blue:  rgba(37, 99, 235, .4);
+  /* Bordes */
+  --color-border: rgba(15, 23, 42, .08);
+  --color-border-hover: rgba(59, 130, 246, .25);
+
+  /* Inputs */
+  --color-input: #FFFFFF;
+  --color-input-placeholder: #94A3B8;
+
+  /* Dashboard */
+  --color-dashboard: rgba(255, 255, 255, .92);
+  --color-dashboard-top: rgba(15, 23, 42, .03);
+
+  /* Sombras */
+  --shadow-card: 0 20px 45px rgba(15, 23, 42, .08);
+
+  /* Bordes */
+  --color-border: rgba(15, 23, 42, .08);
+  --color-border-hover: rgba(15, 23, 42, .15);
+  --color-border-blue: rgba(37, 99, 235, .25);
+
+  /* Cards */
+  --color-card: #FFFFFF;
 
   /* Tipografía */
   --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body:    'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
 
   /* Spacing */
   --section-padding: 120px;
 
   /* Radii */
-  --radius-sm:    12px;
-  --radius-md:    16px;
-  --radius-lg:    20px;
-  --radius-btn:   14px;
-  --radius-pill:  40px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-btn: 14px;
+  --radius-pill: 40px;
 
   /* Transitions */
   --transition: .35s ease;
+
+  /* Navbar */
+  --color-navbar: rgba(255, 255, 255, .90);
+  --color-navbar-scroll: rgba(255, 255, 255, .98);
+  --color-navbar-border: rgba(15, 23, 42, .08);
+
+  --color-menu: rgba(15, 23, 42, .70);
+  --color-menu-hover: #0F172A;
+  --color-menu-active: var(--color-blue);
+
+  --color-bottom-nav: rgba(255, 255, 255, .95);
+  --color-bottom-border: rgba(15, 23, 42, .08);
+
+  --color-tab: rgba(15, 23, 42, .45);
+  --color-tab-hover: rgba(15, 23, 42, .75);
+
+  --color-tab-active-bg: rgba(59, 130, 246, .12);
+
+  --shadow-navbar: 0 10px 30px rgba(15, 23, 42, .08);
+
+}
+
+/* ── thema oscuro ───────────────────────────────────── */
+[data-theme="dark"] {
+
+  /* Backgrounds */
+
+  --color-bg-deep: #030712;
+
+  --color-bg-dark: #07101e;
+
+  --color-bg-darker: #040d1b;
+
+  /* Texto */
+
+  --color-surface: #07101e;
+  --color-surface-alt: #040d1b;
+
+  --color-card: #101d31;
+  --color-card-hover: #162338;
+
+  --color-heading: #FFFFFF;
+  --color-text: #E2E8F0;
+  --color-text-muted: #A5B4C7;
+  --color-text-light: #B8C5D6;
+
+  --color-border: rgba(255, 255, 255, .08);
+  --color-border-hover: rgba(59, 130, 246, .35);
+
+  --color-input: rgba(255, 255, 255, .05);
+  --color-input-placeholder: rgba(255, 255, 255, .35);
+
+  --color-dashboard: rgba(8, 20, 40, .85);
+  --color-dashboard-top: rgba(255, 255, 255, .04);
+
+  --shadow-card: 0 20px 45px rgba(0, 0, 0, .35);
+
+  /* Bordes */
+
+  --color-border: rgba(255, 255, 255, .08);
+
+  --color-border-hover: rgba(255, 255, 255, .15);
+
+  --color-border-blue: rgba(37, 99, 235, .40);
+
+  /* Cards */
+
+  --color-card: #162338;
+
+  /* Navbar */
+
+  --color-navbar: rgba(3, 7, 18, .45);
+  --color-navbar-scroll: rgba(7, 16, 30, .95);
+  --color-navbar-border: rgba(255, 255, 255, .05);
+
+  --color-menu: rgba(255, 255, 255, .75);
+  --color-menu-hover: #ffffff;
+  --color-menu-active: #3B82F6;
+
+  --color-bottom-nav: rgba(4, 13, 27, .92);
+  --color-bottom-border: rgba(255, 255, 255, .08);
+
+  --color-tab: rgba(255, 255, 255, .40);
+  --color-tab-hover: rgba(255, 255, 255, .70);
+
+  --color-tab-active-bg: rgba(59, 130, 246, .15);
+
+  --shadow-navbar: 0 10px 30px rgba(0, 0, 0, .35);
+
 }
 
 /* ── Base ─────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
 }
-
+@media (max-width: 900px) {
+  body { padding-bottom: 90px; }
+}
 body {
   font-family: var(--font-body);
   color: var(--color-text);
@@ -68,13 +187,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--font-display);
 }
 
 /* ── Scroll offset para anclas con navbar fijo ────────────── */
 section[id] {
-  scroll-margin-top: 80px; /* ajusta al alto de tu navbar */
+  scroll-margin-top: 80px;
+  /* ajusta al alto de tu navbar */
 }
 
 /* ── Utilitarios globales ─────────────────────────────────── */

@@ -1,6 +1,6 @@
 .technology-card{
 
-    background:#111827;
+    background:var(--color-surface);
 
     border-radius:20px;
 
@@ -16,7 +16,7 @@
 
     gap:20px;
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid var(--color-border);
 
     transition:.35s;
 
@@ -44,7 +44,7 @@
 
 .technology-card span{
 
-    color:white;
+    color:var(--color-text-secondary);
 
     font-weight:600;
 
